@@ -1,0 +1,216 @@
+.ProfileCard {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 500px;
+    min-width: 400px;
+    margin: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-family: "Saira Condensed", sans-serif;
+    background-color: white;
+}
+
+.ProfileCard:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.CardTop {
+    border-radius: 15px 15px 0 0;
+}
+
+.ProfileName {
+    font-weight: 600;
+    font-size: 2em;
+    margin: 0;
+    color: white;
+}
+
+.Reputation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5em;
+    line-height: 2em;
+    text-align: center;
+    margin: 0;
+}
+
+.ReputationContent {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 13px;
+    padding: 0 10px;
+    font-family: "Alegreya Sans", sans-serif;
+    font-weight: 800;
+    font-size: 2em;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.CardTop,
+.CardBottom {
+    flex-shrink: 0;
+    align-items: flex-end;
+}
+
+.DisplayPicture {
+    height: 125px;
+    width: 125px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 30px auto 0 auto;
+}
+
+.waves {
+    display: block;
+    position: relative;
+    bottom: 0;
+}
+
+/* Animation */
+
+.parallax path {
+    height: 30px;
+}
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+.ProfileName {
+    text-align: center;
+}
+
+.Search {
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+}
+.SearchSpan {
+    width: 15%;
+    border: 3px solid #1c76d2;
+    padding-top: 4px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+    font-size: 20px;
+}
+.SearchInput {
+    width: 85%;
+    border: 3px solid #1c76d2;
+    border-left: none;
+    padding: 5px;
+    border-radius: 0 5px 5px 0;
+    outline: none;
+}
+
+.Medals {
+    display: flex;
+    justify-content: center;
+}
+
+.Medal {
+    display: inline-flex;
+    margin: 15px;
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.MedalCircle {
+    font-size: 1.5em;
+    font-weight: 600;
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    color: white;
+    text-align: center;
+    line-height: 46px;
+    vertical-align: middle;
+    position: relative;
+    border-width: 0.2em;
+    border-style: solid;
+    z-index: 1;
+    box-shadow: inset 0 0 0 #a7b2b8, 2px 2px 0 rgba(0, 0, 0, 0.08);
+    border-color: #edeff1;
+    text-shadow: 2px 2px 0 #98a6ad;
+    background: linear-gradient(to bottom right, #d1d7da 50%, #c3cbcf 50%);
+}
+.MedalCircle.MedalCircleGold {
+    box-shadow: inset 0 0 0 #b67d05, 2px 2px 0 rgba(0, 0, 0, 0.08);
+    border-color: #fadd40;
+    text-shadow: 0 0 4px #9d6c04;
+    background: linear-gradient(to bottom right, #f9ad0e 50%, #e89f06 50%);
+}
+.MedalCircle.MedalCircleSilver {
+    box-shadow: inset 0 0 0 #a7b2b8, 2px 2px 0 rgba(0, 0, 0, 0.08);
+    border-color: #bcc1c7;
+    text-shadow: 0px 0px 4px #98a6ad;
+    background: linear-gradient(to bottom right, #afb6b9 50%, #b9c2c5 50%);
+}
+.MedalCircle.MedalCircleBronze {
+    box-shadow: inset 0 0 0 #955405, 2px 2px 0 rgba(0, 0, 0, 0.08);
+    border-color: #f7bb23;
+    text-shadow: 0 0 4px #7d4604;
+    background: linear-gradient(to bottom right, #df7e08 50%, #c67007 50%);
+}
+
+.MedalRibbon {
+    content: "";
+    display: block;
+    position: absolute;
+    border-style: solid;
+    border-width: 6px 10px;
+    width: 0;
+    height: 20px;
+    top: 40px;
+}
+
+.MedalRibbonLeft {
+    border-color: #fc402d #fc402d transparent #fc402d;
+    left: 8px;
+    transform: rotate(20deg) translateZ(-32px);
+}
+
+.MedalRibbonRight {
+    left: 28px;
+    border-color: #f31903 #f31903 transparent #f31903;
+    transform: rotate(-20deg) translateZ(-48px);
+}
+
+.UserListItem {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
