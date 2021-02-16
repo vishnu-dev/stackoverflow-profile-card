@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/stackoverflow-profile-card/static/css/main.98b0f8c1.chunk.css",
-    "main.js": "/stackoverflow-profile-card/static/js/main.9edf464b.chunk.js",
-    "main.js.map": "/stackoverflow-profile-card/static/js/main.9edf464b.chunk.js.map",
-    "runtime-main.js": "/stackoverflow-profile-card/static/js/runtime-main.88cb9cb1.js",
-    "runtime-main.js.map": "/stackoverflow-profile-card/static/js/runtime-main.88cb9cb1.js.map",
+    "main.js": "/stackoverflow-profile-card/static/js/main.647cac58.chunk.js",
+    "main.js.map": "/stackoverflow-profile-card/static/js/main.647cac58.chunk.js.map",
+    "runtime-main.js": "/stackoverflow-profile-card/static/js/runtime-main.6328cf4e.js",
+    "runtime-main.js.map": "/stackoverflow-profile-card/static/js/runtime-main.6328cf4e.js.map",
     "static/css/2.042623cf.chunk.css": "/stackoverflow-profile-card/static/css/2.042623cf.chunk.css",
-    "static/js/2.e8387bd3.chunk.js": "/stackoverflow-profile-card/static/js/2.e8387bd3.chunk.js",
-    "static/js/2.e8387bd3.chunk.js.map": "/stackoverflow-profile-card/static/js/2.e8387bd3.chunk.js.map",
-    "static/js/3.5816aaf5.chunk.js": "/stackoverflow-profile-card/static/js/3.5816aaf5.chunk.js",
-    "static/js/3.5816aaf5.chunk.js.map": "/stackoverflow-profile-card/static/js/3.5816aaf5.chunk.js.map",
+    "static/js/2.089c8431.chunk.js": "/stackoverflow-profile-card/static/js/2.089c8431.chunk.js",
+    "static/js/2.089c8431.chunk.js.map": "/stackoverflow-profile-card/static/js/2.089c8431.chunk.js.map",
+    "static/js/3.6dabcc70.chunk.js": "/stackoverflow-profile-card/static/js/3.6dabcc70.chunk.js",
+    "static/js/3.6dabcc70.chunk.js.map": "/stackoverflow-profile-card/static/js/3.6dabcc70.chunk.js.map",
     "index.html": "/stackoverflow-profile-card/index.html",
     "static/css/2.042623cf.chunk.css.map": "/stackoverflow-profile-card/static/css/2.042623cf.chunk.css.map",
     "static/css/main.98b0f8c1.chunk.css.map": "/stackoverflow-profile-card/static/css/main.98b0f8c1.chunk.css.map",
-    "static/js/2.e8387bd3.chunk.js.LICENSE.txt": "/stackoverflow-profile-card/static/js/2.e8387bd3.chunk.js.LICENSE.txt"
+    "static/js/2.089c8431.chunk.js.LICENSE.txt": "/stackoverflow-profile-card/static/js/2.089c8431.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.88cb9cb1.js",
+    "static/js/runtime-main.6328cf4e.js",
     "static/css/2.042623cf.chunk.css",
-    "static/js/2.e8387bd3.chunk.js",
+    "static/js/2.089c8431.chunk.js",
     "static/css/main.98b0f8c1.chunk.css",
-    "static/js/main.9edf464b.chunk.js"
+    "static/js/main.647cac58.chunk.js"
   ]
 }
