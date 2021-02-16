@@ -10,9 +10,8 @@ import Dialog from '@material-ui/core/Dialog';
 import Button from '@material-ui/core/Button';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import UserSearch from './components/UserSearch/UserSearch';
 
 function App() {
@@ -45,7 +44,7 @@ function App() {
     };
   
     return (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <link rel="preconnect" href="https://fonts.gstatic.com"></link>
             <link
                 href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
