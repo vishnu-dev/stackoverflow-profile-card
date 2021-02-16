@@ -1,4 +1,9 @@
-.ProfileCard {
+.CardLink {
+    text-decoration: none;
+    color: black;
+}
+
+.ProfileCardLarge {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -12,7 +17,24 @@
     background-color: white;
 }
 
-.ProfileCard:hover {
+.ProfileCardLarge:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.ProfileCardMini {
+    display: flex;
+    align-items: stretch;
+    min-height: 200px;
+    min-width: 350px;
+    margin: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-family: "Saira Condensed", sans-serif;
+    background-color: white;
+}
+
+.ProfileCardMini:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
@@ -20,11 +42,22 @@
     border-radius: 15px 15px 0 0;
 }
 
-.ProfileName {
-    font-weight: 600;
-    font-size: 2em;
-    margin: 0;
-    color: white;
+.CardLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px 0 0 15px;
+    box-shadow: -15px 0 15px 0 white inset;
+    padding: 0 45px 0 30px;
+    max-width: 175px;
+}
+
+.CardRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .Reputation {
@@ -39,7 +72,7 @@
     margin: 0;
 }
 
-.ReputationContent {
+.ProfileCardLarge .ReputationContent {
     position: relative;
     display: flex;
     justify-content: center;
@@ -50,8 +83,21 @@
     font-weight: 800;
     font-size: 2em;
     -webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-    background-color: rgba(0, 0, 0, 0.25);
+    -webkit-text-fill-color: transparent;
+}
+
+.ProfileCardMini .ReputationContent {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 13px;
+    padding: 0 10px;
+    font-family: "Alegreya Sans", sans-serif;
+    font-weight: 800;
+    font-size: 1.8em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .CardTop,
@@ -60,15 +106,25 @@
     align-items: flex-end;
 }
 
-.DisplayPicture {
+.ProfileCardLarge .DisplayPicture {
     height: 125px;
     width: 125px;
     background-color: black;
     border-radius: 50%;
     margin: 30px auto 0 auto;
+    background-position: center center;
 }
 
-.waves {
+.ProfileCardMini .DisplayPicture {
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 15px auto 0 auto;
+    background-position: center center;
+}
+
+.ProfileCardLarge .waves {
     display: block;
     position: relative;
     bottom: 0;
@@ -108,8 +164,20 @@
     }
 }
 
-.ProfileName {
+.ProfileCardLarge .ProfileName {
     text-align: center;
+    font-weight: 600;
+    font-size: 2em;
+    margin: 0;
+    color: white;
+}
+
+.ProfileCardMini .ProfileName {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5em;
+    margin: 0;
+    color: white;
 }
 
 .Search {
@@ -141,14 +209,21 @@
     justify-content: center;
 }
 
-.Medal {
+.ProfileCardLarge .Medal {
     display: inline-flex;
     margin: 15px;
     position: relative;
     margin-bottom: 16px;
 }
 
-.MedalCircle {
+.ProfileCardMini .Medal {
+    display: inline-flex;
+    margin: 10px;
+    position: relative;
+    margin-bottom: 11px;
+}
+
+.ProfileCardLarge .MedalCircle {
     font-size: 1.5em;
     font-weight: 600;
     width: 44px;
@@ -167,6 +242,27 @@
     text-shadow: 2px 2px 0 #98a6ad;
     background: linear-gradient(to bottom right, #d1d7da 50%, #c3cbcf 50%);
 }
+
+.ProfileCardMini .MedalCircle {
+    font-size: 1.2em;
+    font-weight: 600;
+    width: 33px;
+    height: 33px;
+    border-radius: 100%;
+    color: white;
+    text-align: center;
+    line-height: 34px;
+    vertical-align: middle;
+    position: relative;
+    border-width: 0.2em;
+    border-style: solid;
+    z-index: 1;
+    box-shadow: inset 0 0 0 #a7b2b8, 2px 2px 0 rgba(0, 0, 0, 0.08);
+    border-color: #edeff1;
+    text-shadow: 2px 2px 0 #98a6ad;
+    background: linear-gradient(to bottom right, #d1d7da 50%, #c3cbcf 50%);
+}
+
 .MedalCircle.MedalCircleGold {
     box-shadow: inset 0 0 0 #b67d05, 2px 2px 0 rgba(0, 0, 0, 0.08);
     border-color: #fadd40;
@@ -186,7 +282,7 @@
     background: linear-gradient(to bottom right, #df7e08 50%, #c67007 50%);
 }
 
-.MedalRibbon {
+.ProfileCardLarge .MedalRibbon {
     content: "";
     display: block;
     position: absolute;
@@ -197,14 +293,37 @@
     top: 40px;
 }
 
-.MedalRibbonLeft {
+.ProfileCardMini .MedalRibbon {
+    content: "";
+    display: block;
+    position: absolute;
+    border-style: solid;
+    border-width: 5px 8px;
+    width: 0;
+    height: 15px;
+    top: 30px;
+}
+
+.ProfileCardLarge .MedalRibbonLeft {
     border-color: #fc402d #fc402d transparent #fc402d;
     left: 8px;
     transform: rotate(20deg) translateZ(-32px);
 }
 
-.MedalRibbonRight {
+.ProfileCardLarge .MedalRibbonRight {
     left: 28px;
+    border-color: #f31903 #f31903 transparent #f31903;
+    transform: rotate(-20deg) translateZ(-48px);
+}
+
+.ProfileCardMini .MedalRibbonLeft {
+    border-color: #fc402d #fc402d transparent #fc402d;
+    left: 5px;
+    transform: rotate(20deg) translateZ(-32px);
+}
+
+.ProfileCardMini .MedalRibbonRight {
+    left: 22px;
     border-color: #f31903 #f31903 transparent #f31903;
     transform: rotate(-20deg) translateZ(-48px);
 }
@@ -213,4 +332,8 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+}
+
+.Loading {
+    padding: 30px;
 }

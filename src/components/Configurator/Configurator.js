@@ -41,7 +41,6 @@ const getBorW = (hex) => {
 
 const Configurator = ({onChange}) => {
     const classes = useStyles();
-    const [size, setSize] = React.useState("small");
     const [gradients, setGradients] = React.useState([]);
     const [config, setConfig] = React.useState({
         size: 'large',
@@ -59,7 +58,7 @@ const Configurator = ({onChange}) => {
         const index = rowIndex * columnCount + columnIndex;
         const datum = gradients[index];
         const cellStyle = {
-            backgroundImage: `linear-gradient(to right, ${datum.colors.join(
+            backgroundImage: `linear-gradient(45deg, ${datum.colors.join(
                 ", "
             )})`,
             color: getBorW(datum.colors[0]),
@@ -96,7 +95,7 @@ const Configurator = ({onChange}) => {
                             color="primary"
                             onClick={() => updateConfig({size: "large"})}
                         >
-                            <FullscreenIcon /> Large
+                            <FullscreenIcon /> Max
                         </Button>
                         <Button
                             className="ButtonGradient"
@@ -107,7 +106,7 @@ const Configurator = ({onChange}) => {
                             color="primary"
                             onClick={() => updateConfig({size: "small"})}
                         >
-                            <FullscreenExitIcon /> Small
+                            <FullscreenExitIcon /> Mini
                         </Button>
                     </Paper>
                 </Grid>
