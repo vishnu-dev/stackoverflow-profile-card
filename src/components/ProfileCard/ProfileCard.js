@@ -6,6 +6,8 @@ import "./ProfileCard.css";
 import { useParams } from "react-router-dom";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
+import { useLocation } from "react-router-dom";
+import StackOverflowLogo from '../../images/logo-stackoverflow.png';
 
 const Alert = (props) => {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -68,7 +70,7 @@ const ProfileCardMax = ({ userData, config, gradient }) => (
             <div className="CardBottom">
                 <p className="Reputation">
                     <img
-                        src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.png"
+                        src={StackOverflowLogo}
                         width="130"
                         alt="StackOverflow Logo"
                     ></img>
@@ -137,7 +139,7 @@ const ProfileCardMini = ({ userData, config, gradient }) => (
             <div className="CardRight">
                 <p className="Reputation">
                     <img
-                        src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.png"
+                        src={StackOverflowLogo}
                         width="130"
                         alt="StackOverflow Logo"
                     ></img>
@@ -189,7 +191,18 @@ const ProfileCardMini = ({ userData, config, gradient }) => (
     </a>
 );
 
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
+
 const ProfileCard = ({ userId, config }) => {
+    const query = useQuery();
+    if (query.has("gradient")) {
+        config.gradient = query.get("gradient").split(",");
+    }
+    if (query.has("size")) {
+        config.size = query.get("size");
+    }
     const [userData, setUserData] = useState(null);
     const { userQueryId } = useParams();
     const [openModal, setOpenModal] = useState(false);

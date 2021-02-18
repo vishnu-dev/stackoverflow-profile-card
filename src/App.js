@@ -15,6 +15,7 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import UserSearch from './components/UserSearch/UserSearch';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+import StackOverflowLogo from './images/logo-stackoverflow.png';
 
 function App() {
   
@@ -28,16 +29,19 @@ function App() {
     const [openCodeDialog, setOpenCodeDialog] = useState(false);
     const [embedCode, setEmbedCode] = useState("");
 
-    useEffect(() => {
+    const updateEmbedCode = () => {
+        const link = `${window.location}user/${userId}?size=${config.size}&gradient=${encodeURIComponent(config.gradient)}`;
         setEmbedCode(
-            `<iframe src="${window.location}user/${userId}" width="100%" height="100%" seamless frameborder="0" scrolling="no"></iframe>`
+            `<iframe src="${link}" width="100%" height="100%" seamless frameborder="0" scrolling="no"></iframe>`
         );
-    }, [userId]);
+    }
+
+    useEffect(() => {
+        updateEmbedCode();
+    }, [userId, config]);
 
     const userChangedHandler = (userId) => {
-        setEmbedCode(
-            `<iframe src="${window.location}user/${userId}" width="100%" height="100%" seamless frameborder="0" scrolling="no"></iframe>`
-        );
+        updateEmbedCode();
         setUserId(userId);
     };
 
@@ -72,7 +76,7 @@ function App() {
                                 <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
                                     <div className="Logo">
                                         <img
-                                            src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.png"
+                                            src={StackOverflowLogo}
                                             height="40"
                                             alt="StackOverflow Logo"
                                         ></img>
