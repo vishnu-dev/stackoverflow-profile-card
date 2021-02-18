@@ -12,6 +12,8 @@
     justify-content: center;
     flex-grow: 1;
     flex-shrink: 0;
+    background-image: url('./images/lightbg.png');
+    color: #000
 }
 
 .RightMain {

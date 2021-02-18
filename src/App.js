@@ -13,6 +13,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import UserSearch from './components/UserSearch/UserSearch';
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 
 function App() {
   
@@ -65,52 +67,52 @@ function App() {
                     <div className="Main">
                         <div
                             className="LeftMain"
-                            style={{
-                                backgroundImage: "url(/lightbg.png)",
-                                color: "#000",
-                            }}
                         >
-                            <div className="Logo">
-                                <img
-                                    src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.png"
-                                    height="40"
-                                    alt="StackOverflow Logo"
-                                ></img>
-                            </div>
-                            <p className="Title">Profile Card</p>
-                            <UserSearch onUserChange={userChangedHandler}></UserSearch>
-                            <ProfileCard userId={userId} config={config}></ProfileCard>
-                            <div className="Action">
-                                <Fab
-                                    variant="extended"
-                                    color="primary"
-                                    style={{ marginRight: 20 + "px" }}
-                                    onClick={() => setOpenCodeDialog(!openCodeDialog)}
-                                >
-                                    <CodeIcon
-                                        style={{ marginRight: 10 + "px" }}
-                                    />
-                                    Embed
-                                </Fab>
-                                <Fab
-                                    variant={
-                                        settingsToggle ? "round" : "extended"
-                                    }
-                                    color="secondary"
-                                    onClick={() =>
-                                        setSettingsToggle(!settingsToggle)
-                                    }
-                                >
-                                    {settingsToggle ? (
-                                        <CloseIcon />
-                                    ) : (
-                                        <StyleIcon
-                                            style={{ marginRight: 10 + "px" }}
-                                        />
-                                    )}
-                                    {settingsToggle ? "" : "Customize"}
-                                </Fab>
-                            </div>
+                            <Container maxWidth="sm">
+                                <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+                                    <div className="Logo">
+                                        <img
+                                            src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.png"
+                                            height="40"
+                                            alt="StackOverflow Logo"
+                                        ></img>
+                                    </div>
+                                    <p className="Title">Profile Card</p>
+                                    <UserSearch onUserChange={userChangedHandler}></UserSearch>
+                                    <ProfileCard userId={userId} config={config}></ProfileCard>
+                                    <div className="Action">
+                                        <Fab
+                                            variant="extended"
+                                            color="primary"
+                                            style={{ marginRight: 20 + "px" }}
+                                            onClick={() => setOpenCodeDialog(!openCodeDialog)}
+                                        >
+                                            <CodeIcon
+                                                style={{ marginRight: 10 + "px" }}
+                                            />
+                                            Embed
+                                        </Fab>
+                                        <Fab
+                                            variant={
+                                                settingsToggle ? "round" : "extended"
+                                            }
+                                            color="secondary"
+                                            onClick={() =>
+                                                setSettingsToggle(!settingsToggle)
+                                            }
+                                        >
+                                            {settingsToggle ? (
+                                                <CloseIcon />
+                                            ) : (
+                                                <StyleIcon
+                                                    style={{ marginRight: 10 + "px" }}
+                                                />
+                                            )}
+                                            {settingsToggle ? "" : "Customize"}
+                                        </Fab>
+                                    </div>
+                                </Box>
+                            </Container>
                             <Dialog
                                 open={openCodeDialog}
                                 onClose={closeDialog}
