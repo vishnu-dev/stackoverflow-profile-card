@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/stackoverflow-profile-card/static/css/main.25942243.chunk.css",
-    "main.js": "/stackoverflow-profile-card/static/js/main.6464ad35.chunk.js",
-    "main.js.map": "/stackoverflow-profile-card/static/js/main.6464ad35.chunk.js.map",
-    "runtime-main.js": "/stackoverflow-profile-card/static/js/runtime-main.2076010c.js",
-    "runtime-main.js.map": "/stackoverflow-profile-card/static/js/runtime-main.2076010c.js.map",
-    "static/css/2.042623cf.chunk.css": "/stackoverflow-profile-card/static/css/2.042623cf.chunk.css",
-    "static/js/2.ad64d393.chunk.js": "/stackoverflow-profile-card/static/js/2.ad64d393.chunk.js",
-    "static/js/2.ad64d393.chunk.js.map": "/stackoverflow-profile-card/static/js/2.ad64d393.chunk.js.map",
-    "static/js/3.adb8c984.chunk.js": "/stackoverflow-profile-card/static/js/3.adb8c984.chunk.js",
-    "static/js/3.adb8c984.chunk.js.map": "/stackoverflow-profile-card/static/js/3.adb8c984.chunk.js.map",
-    "index.html": "/stackoverflow-profile-card/index.html",
-    "static/css/2.042623cf.chunk.css.map": "/stackoverflow-profile-card/static/css/2.042623cf.chunk.css.map",
-    "static/css/main.25942243.chunk.css.map": "/stackoverflow-profile-card/static/css/main.25942243.chunk.css.map",
-    "static/js/2.ad64d393.chunk.js.LICENSE.txt": "/stackoverflow-profile-card/static/js/2.ad64d393.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/stackoverflow-profile-card/static/media/lightbg.50505726.png"
+    "main.css": "/static/css/main.179cd968.chunk.css",
+    "main.js": "/static/js/main.a2d5a464.chunk.js",
+    "main.js.map": "/static/js/main.a2d5a464.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d98aa93f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d98aa93f.js.map",
+    "static/css/2.042623cf.chunk.css": "/static/css/2.042623cf.chunk.css",
+    "static/js/2.ad64d393.chunk.js": "/static/js/2.ad64d393.chunk.js",
+    "static/js/2.ad64d393.chunk.js.map": "/static/js/2.ad64d393.chunk.js.map",
+    "static/js/3.adb8c984.chunk.js": "/static/js/3.adb8c984.chunk.js",
+    "static/js/3.adb8c984.chunk.js.map": "/static/js/3.adb8c984.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.042623cf.chunk.css.map": "/static/css/2.042623cf.chunk.css.map",
+    "static/css/main.179cd968.chunk.css.map": "/static/css/main.179cd968.chunk.css.map",
+    "static/js/2.ad64d393.chunk.js.LICENSE.txt": "/static/js/2.ad64d393.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/lightbg.50505726.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.2076010c.js",
+    "static/js/runtime-main.d98aa93f.js",
     "static/css/2.042623cf.chunk.css",
     "static/js/2.ad64d393.chunk.js",
-    "static/css/main.25942243.chunk.css",
-    "static/js/main.6464ad35.chunk.js"
+    "static/css/main.179cd968.chunk.css",
+    "static/js/main.a2d5a464.chunk.js"
   ]
 }
