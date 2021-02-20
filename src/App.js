@@ -50,7 +50,7 @@ function App() {
     };
   
     return (
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
             <link rel="preconnect" href="https://fonts.gstatic.com"></link>
             <link
                 href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
