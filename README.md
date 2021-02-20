@@ -6,7 +6,7 @@
 
 ## Create your card
 
-[https://vishnu-dev.github.io/stackoverflow-profile-card](https://vishnu-dev.github.io/stackoverflow-profile-card/#/)
+[https://socard.vishnudev.in](https://socard.vishnudev.in)
 
 ## Examples
 
