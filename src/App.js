@@ -50,7 +50,7 @@ function App() {
     };
   
     return (
-        <Router>
+        <Router basename="/">
             <link rel="preconnect" href="https://fonts.gstatic.com"></link>
             <link
                 href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
