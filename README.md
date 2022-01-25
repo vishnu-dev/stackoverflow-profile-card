@@ -6,7 +6,7 @@
 
 ## Create your card
 
-[https://socard.vishnudev.in](https://socard.vishnudev.in)
+[https://vishnudev.in/stackoverflow-profile-card](https://vishnudev.in/stackoverflow-profile-card)
 
 ## Examples
 
