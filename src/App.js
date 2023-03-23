@@ -2,28 +2,19 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
 import Configurator from "./components/Configurator/Configurator";
-import Fab from "@material-ui/core/Fab";
-import CodeIcon from "@material-ui/icons/Code";
-import StyleIcon from "@material-ui/icons/Style";
-import CloseIcon from "@material-ui/icons/Close";
-import Dialog from '@material-ui/core/Dialog';
-import Button from '@material-ui/core/Button';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import UserSearch from './components/UserSearch/UserSearch';
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
-import StackOverflowLogo from './images/logo-stackoverflow.png';
+import UserSearch from "./components/UserSearch/UserSearch";
+import StackOverflowLogo from "./images/logo-stackoverflow.png";
+import { Box, Button, Container, Dialog, DialogActions, DialogContent, DialogTitle, Fab } from "@mui/material";
+import { Close, Code, Style } from "@mui/icons-material";
 
 function App() {
-  
+
     const [userId, setUserId] = useState("5120049");
     const [config, setConfig] = useState({
         size: "large",
         gradient: ["#20bf55", "#01baef"],
-        textColor: "#FFFFFF",
+        textColor: "#FFFFFF"
     });
     const [settingsToggle, setSettingsToggle] = useState(false);
     const [openCodeDialog, setOpenCodeDialog] = useState(false);
@@ -34,7 +25,7 @@ function App() {
         setEmbedCode(
             `<iframe src="${link}" width="100%" height="100%" seamless frameborder="0" scrolling="no"></iframe>`
         );
-    }
+    };
 
     useEffect(() => {
         updateEmbedCode();
@@ -48,24 +39,24 @@ function App() {
     const closeDialog = () => {
         setOpenCodeDialog(false);
     };
-  
+
     return (
         <Router basename="/">
-            <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+            <link rel="preconnect" href="https://fonts.gstatic.com"/>
             <link
                 href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
                 rel="stylesheet"
-            ></link>
+            />
             <link
                 href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200;400;600&display=swap"
                 rel="stylesheet"
-            ></link>
+            />
             <link
                 href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@800&display=swap"
                 rel="stylesheet"
-            ></link>
+            />
             <Switch>
-                <Route path="/user/:userQueryId" component={() => (<ProfileCard config={config}></ProfileCard>)}>
+                <Route path="/user/:userQueryId" component={() => (<ProfileCard config={config}/>)}>
                 </Route>
                 <Route path="/">
                     <div className="Main">
@@ -79,11 +70,11 @@ function App() {
                                             src={StackOverflowLogo}
                                             height="40"
                                             alt="StackOverflow Logo"
-                                        ></img>
+                                        />
                                     </div>
                                     <p className="Title">Profile Card</p>
-                                    <UserSearch onUserChange={userChangedHandler}></UserSearch>
-                                    <ProfileCard userId={userId} config={config}></ProfileCard>
+                                    <UserSearch onUserChange={userChangedHandler}/>
+                                    <ProfileCard userId={userId} config={config}/>
                                     <div className="Action">
                                         <Fab
                                             variant="extended"
@@ -91,7 +82,7 @@ function App() {
                                             style={{ marginRight: 20 + "px" }}
                                             onClick={() => setOpenCodeDialog(!openCodeDialog)}
                                         >
-                                            <CodeIcon
+                                            <Code
                                                 style={{ marginRight: 10 + "px" }}
                                             />
                                             Embed
@@ -106,9 +97,9 @@ function App() {
                                             }
                                         >
                                             {settingsToggle ? (
-                                                <CloseIcon />
+                                                <Close />
                                             ) : (
-                                                <StyleIcon
+                                                <Style
                                                     style={{ marginRight: 10 + "px" }}
                                                 />
                                             )}
@@ -130,19 +121,19 @@ function App() {
                                     <pre>{embedCode}</pre>
                                 </DialogContent>
                                 <DialogActions>
-                                <Button onClick={closeDialog} color="primary" autoFocus>
-                                    Done
-                                </Button>
+                                    <Button onClick={closeDialog} color="primary" autoFocus>
+                                        Done
+                                    </Button>
                                 </DialogActions>
                             </Dialog>
                         </div>
                         <div
                             className="RightMain"
                             style={{
-                                display: settingsToggle ? "block" : "none",
+                                display: settingsToggle ? "block" : "none"
                             }}
                         >
-                            <Configurator onChange={setConfig}></Configurator>
+                            <Configurator onChange={setConfig}/>
                         </div>
                     </div>
                 </Route>

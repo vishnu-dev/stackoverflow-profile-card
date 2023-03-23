@@ -1,17 +1,11 @@
 import { useState, useEffect, Fragment } from "react";
-import Typography from "@material-ui/core/Typography";
 import NumberFormat from "react-number-format";
-import PropTypes from "prop-types";
 import "./ProfileCard.css";
+import PropTypes from 'prop-types';
 import { useParams } from "react-router-dom";
-import Snackbar from "@material-ui/core/Snackbar";
-import MuiAlert from "@material-ui/lab/Alert";
 import { useLocation } from "react-router-dom";
-import StackOverflowLogo from '../../images/logo-stackoverflow.png';
-
-const Alert = (props) => {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-};
+import StackOverflowLogo from "../../images/logo-stackoverflow.png";
+import { Alert, Collapse, Snackbar, Typography } from "@mui/material";
 
 const ProfileCardMax = ({ userData, config, gradient }) => (
     <a href={userData.link} className="CardLink" target="blank">
@@ -20,9 +14,9 @@ const ProfileCardMax = ({ userData, config, gradient }) => (
                 <div
                     className="DisplayPicture"
                     style={{
-                        backgroundImage: `url(${userData.profile_image})`,
+                        backgroundImage: `url(${userData.profile_image})`
                     }}
-                ></div>
+                />
 
                 <p className="ProfileName" style={{ color: config.textColor }}>
                     {userData?.display_name.toUpperCase()}
@@ -38,32 +32,32 @@ const ProfileCardMax = ({ userData, config, gradient }) => (
                         <path
                             id="gentle-wave"
                             d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 22 h -352 z"
-                        ></path>
+                        />
                     </defs>
                     <g className="parallax">
                         <use
                             x="48"
                             fill="rgba(255,255,255,0.6)"
                             xlinkHref="#gentle-wave"
-                        ></use>
+                        />
                         <use
                             x="48"
                             y="2"
                             fill="rgba(255,255,255,0.4)"
                             xlinkHref="#gentle-wave"
-                        ></use>
+                        />
                         <use
                             x="48"
                             y="4"
                             fill="rgba(255,255,255,0.2)"
                             xlinkHref="#gentle-wave"
-                        ></use>
+                        />
                         <use
                             x="48"
                             y="6"
                             fill="#fff"
                             xlinkHref="#gentle-wave"
-                        ></use>
+                        />
                     </g>
                 </svg>
             </div>
@@ -73,7 +67,7 @@ const ProfileCardMax = ({ userData, config, gradient }) => (
                         src={StackOverflowLogo}
                         width="130"
                         alt="StackOverflow Logo"
-                    ></img>
+                    />
                     <span
                         className="ReputationContent"
                         style={{
@@ -81,7 +75,7 @@ const ProfileCardMax = ({ userData, config, gradient }) => (
                             filter:
                                 config.textColor === "#000000"
                                     ? "drop-shadow(1px 1px 1px #333)"
-                                    : "none",
+                                    : "none"
                         }}
                     >
                         <NumberFormat
@@ -99,22 +93,22 @@ const ProfileCardMax = ({ userData, config, gradient }) => (
                         <div className="MedalCircle MedalCircleGold">
                             <span>{userData.badge_counts.gold}</span>
                         </div>
-                        <div className="MedalRibbon MedalRibbonLeft"></div>
-                        <div className="MedalRibbon MedalRibbonRight"></div>
+                        <div className="MedalRibbon MedalRibbonLeft"/>
+                        <div className="MedalRibbon MedalRibbonRight"/>
                     </div>
                     <div className="Medal">
                         <div className="MedalCircle MedalCircleSilver">
                             <span>{userData.badge_counts.silver}</span>
                         </div>
-                        <div className="MedalRibbon MedalRibbonLeft"></div>
-                        <div className="MedalRibbon MedalRibbonRight"></div>
+                        <div className="MedalRibbon MedalRibbonLeft"/>
+                        <div className="MedalRibbon MedalRibbonRight"/>
                     </div>
                     <div className="Medal">
                         <div className="MedalCircle MedalCircleBronze">
                             <span>{userData.badge_counts.bronze}</span>
                         </div>
-                        <div className="MedalRibbon MedalRibbonLeft"></div>
-                        <div className="MedalRibbon MedalRibbonRight"></div>
+                        <div className="MedalRibbon MedalRibbonLeft"/>
+                        <div className="MedalRibbon MedalRibbonRight"/>
                     </div>
                 </div>
             </div>
@@ -125,13 +119,13 @@ const ProfileCardMax = ({ userData, config, gradient }) => (
 const ProfileCardMini = ({ userData, config, gradient }) => (
     <a href={userData.link} className="CardLink" target="blank">
         <div className="ProfileCardMini">
-            <div className="CardLeft" style={{ background: gradient }}>
+            <div className="CardLeftNoInset" style={{ background: gradient }}>
                 <div
                     className="DisplayPicture"
                     style={{
-                        backgroundImage: `url(${userData.profile_image})`,
+                        backgroundImage: `url(${userData.profile_image})`
                     }}
-                ></div>
+                />
                 <p className="ProfileName" style={{ color: config.textColor }}>
                     {userData?.display_name.toUpperCase()}
                 </p>
@@ -142,7 +136,7 @@ const ProfileCardMini = ({ userData, config, gradient }) => (
                         src={StackOverflowLogo}
                         width="130"
                         alt="StackOverflow Logo"
-                    ></img>
+                    />
                     <span
                         className="ReputationContent"
                         style={{
@@ -150,7 +144,7 @@ const ProfileCardMini = ({ userData, config, gradient }) => (
                             filter:
                                 config.textColor === "#000000"
                                     ? "drop-shadow(1px 1px 1px #333)"
-                                    : "none",
+                                    : "none"
                         }}
                     >
                         <NumberFormat
@@ -168,22 +162,22 @@ const ProfileCardMini = ({ userData, config, gradient }) => (
                         <div className="MedalCircle MedalCircleGold">
                             <span>{userData.badge_counts.gold}</span>
                         </div>
-                        <div className="MedalRibbon MedalRibbonLeft"></div>
-                        <div className="MedalRibbon MedalRibbonRight"></div>
+                        <div className="MedalRibbon MedalRibbonLeft"/>
+                        <div className="MedalRibbon MedalRibbonRight"/>
                     </div>
                     <div className="Medal">
                         <div className="MedalCircle MedalCircleSilver">
                             <span>{userData.badge_counts.silver}</span>
                         </div>
-                        <div className="MedalRibbon MedalRibbonLeft"></div>
-                        <div className="MedalRibbon MedalRibbonRight"></div>
+                        <div className="MedalRibbon MedalRibbonLeft"/>
+                        <div className="MedalRibbon MedalRibbonRight"/>
                     </div>
                     <div className="Medal">
                         <div className="MedalCircle MedalCircleBronze">
                             <span>{userData.badge_counts.bronze}</span>
                         </div>
-                        <div className="MedalRibbon MedalRibbonLeft"></div>
-                        <div className="MedalRibbon MedalRibbonRight"></div>
+                        <div className="MedalRibbon MedalRibbonLeft"/>
+                        <div className="MedalRibbon MedalRibbonRight"/>
                     </div>
                 </div>
             </div>
@@ -192,7 +186,7 @@ const ProfileCardMini = ({ userData, config, gradient }) => (
 );
 
 const useQuery = () => {
-  return new URLSearchParams(useLocation().search);
+    return new URLSearchParams(useLocation().search);
 };
 
 const ProfileCard = ({ userId, config }) => {
@@ -210,10 +204,11 @@ const ProfileCard = ({ userId, config }) => {
 
     const getUserData = (userId) => {
         const apiEndpoint = `https://api.stackexchange.com/2.2/users/${userId}?order=desc&sort=reputation&site=stackoverflow`;
+        console.log(apiEndpoint);
         fetch(apiEndpoint)
             .then((res) => res.json())
             .then((result) => {
-                if (result.hasOwnProperty('items')) {
+                if (result.hasOwnProperty("items")) {
                     setUserData(
                         result.items.length > 0 ? result.items[0] : null
                     );
@@ -251,31 +246,29 @@ const ProfileCard = ({ userId, config }) => {
                     userData={userData}
                     config={config}
                     gradient={gradient}
-                ></ProfileCardMax>
+                />
             ) : (
                 <ProfileCardMini
                     userData={userData}
                     config={config}
                     gradient={gradient}
-                ></ProfileCardMini>
+                />
             )}
         </div>
     ) : (
         <Fragment>
-            <Snackbar
-                open={openModal}
-                autoHideDuration={6000}
-                onClose={handleClose}
+            <Collapse
+                in={openModal}
             >
-                <Alert severity="error">Too many requests at the moment</Alert>
-            </Snackbar>
+                <Alert elevation={6} variant="filled" severity={'error'}>Too many requests at the moment</Alert>
+            </Collapse>
             <div className="Loading">Loading</div>
         </Fragment>
     );
 };
 
 ProfileCard.propTypes = {
-    name: PropTypes.string,
+    name: PropTypes.string
 };
 
 ProfileCard.defaultProps = {};

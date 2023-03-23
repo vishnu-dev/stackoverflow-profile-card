@@ -10,6 +10,8 @@
 
 ## Examples
 
-|  **Profile Card Max** <img src="./github_assets/SampleMax.png" width="438"/>  | **Customizable Gradient** <img src="./github_assets/SampleGradient.png" width="370"/>              |
+|  **Profile Card Max** <img src="./github_assets/SampleMax.png" width="438"/>  | **Customizable
+Gradient** <img src="./github_assets/SampleGradient.png" width="370"/>              |
 |:-----------------------------------------------------:|:--------------------------------------------------------------------------:|
-| **Profile Card Mini** <img src="./github_assets/SampleMini.png" width="438"/> |                                                                            |
+| **Profile Card
+Mini** <img src="./github_assets/SampleMini.png" width="438"/> |                                                                            |

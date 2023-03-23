@@ -53,6 +53,17 @@
     max-width: 175px;
 }
 
+.CardLeftNoInset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px 0 0 15px;
+    box-shadow: inset -20px 0 10px -6px white;
+    padding: 0 45px 0 30px;
+    max-width: 175px;
+}
+
 .CardRight {
     display: flex;
     flex-direction: column;
@@ -113,6 +124,7 @@
     border-radius: 50%;
     margin: 30px auto 0 auto;
     background-position: center center;
+    background-size: contain;
 }
 
 .ProfileCardMini .DisplayPicture {
@@ -122,6 +134,7 @@
     border-radius: 50%;
     margin: 15px auto 0 auto;
     background-position: center center;
+    background-size: contain;
 }
 
 .ProfileCardLarge .waves {
@@ -139,22 +152,27 @@
 .parallax > use {
     animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
+
 .parallax > use:nth-child(1) {
     animation-delay: -2s;
     animation-duration: 7s;
 }
+
 .parallax > use:nth-child(2) {
     animation-delay: -3s;
     animation-duration: 10s;
 }
+
 .parallax > use:nth-child(3) {
     animation-delay: -4s;
     animation-duration: 13s;
 }
+
 .parallax > use:nth-child(4) {
     animation-delay: -5s;
     animation-duration: 20s;
 }
+
 @keyframes move-forever {
     0% {
         transform: translate3d(-90px, 0, 0);
@@ -186,6 +204,7 @@
     position: relative;
     display: flex;
 }
+
 .SearchSpan {
     width: 15%;
     border: 3px solid #1c76d2;
@@ -195,6 +214,7 @@
     border-radius: 5px 0 0 5px;
     font-size: 20px;
 }
+
 .SearchInput {
     width: 85%;
     border: 3px solid #1c76d2;
@@ -269,12 +289,14 @@
     text-shadow: 0 0 4px #9d6c04;
     background: linear-gradient(to bottom right, #f9ad0e 50%, #e89f06 50%);
 }
+
 .MedalCircle.MedalCircleSilver {
     box-shadow: inset 0 0 0 #a7b2b8, 2px 2px 0 rgba(0, 0, 0, 0.08);
     border-color: #bcc1c7;
     text-shadow: 0px 0px 4px #98a6ad;
     background: linear-gradient(to bottom right, #afb6b9 50%, #b9c2c5 50%);
 }
+
 .MedalCircle.MedalCircleBronze {
     box-shadow: inset 0 0 0 #955405, 2px 2px 0 rgba(0, 0, 0, 0.08);
     border-color: #f7bb23;

@@ -1,22 +1,16 @@
 import React from "react";
 import "./Configurator.css";
-import Paper from "@material-ui/core/Paper";
-import FullscreenIcon from "@material-ui/icons/Fullscreen";
-import FullscreenExitIcon from "@material-ui/icons/FullscreenExit";
-import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
-import { AutoSizer, ColumnSizer, Grid as VirtualGrid } from "react-virtualized";
-import "react-virtualized/styles.css";
 import gradientsJSON from "../../data/gradients.json";
+import { Button, Grid, Paper } from "@mui/material";
+import { DarkMode, Fullscreen, FullscreenExit, LightMode } from "@mui/icons-material";
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
     grid: {
-        margin: theme.spacing(0),
         flexGrow: 0,
         maxWidth: `100%`,
-        flexBasis: `100%`,
-    },
+        flexBasis: `100%`
+    }
 }));
 
 const hexToR = (h) => parseInt(cutHex(h).substring(0, 2), 16);
@@ -39,13 +33,14 @@ const getBorW = (hex) => {
     }
 };
 
-const Configurator = ({onChange}) => {
+const Configurator = ({ onChange }) => {
     const classes = useStyles();
     const [gradients, setGradients] = React.useState([]);
     const [config, setConfig] = React.useState({
-        size: 'large',
-        gradient: ['#20bf55', '#01baef'],
-        textColor: '#FFFFFF'
+        size: "large",
+        gradient: ["#20bf55", "#01baef"],
+        textColor: "#FFFFFF",
+        theme: "light"
     });
 
     const columnCount = 3;
@@ -61,14 +56,14 @@ const Configurator = ({onChange}) => {
             backgroundImage: `linear-gradient(45deg, ${datum.colors.join(
                 ", "
             )})`,
-            color: getBorW(datum.colors[0]),
+            color: getBorW(datum.colors[0])
         };
         return (
             <div
                 style={{ ...cellStyle, ...style }}
                 key={key}
                 className="Gradient"
-                onClick={() => updateConfig({gradient: datum.colors, textColor: cellStyle.color})}
+                onClick={() => updateConfig({ gradient: datum.colors, textColor: cellStyle.color })}
             >
                 {gradients[index].name.toUpperCase()}
             </div>
@@ -76,8 +71,8 @@ const Configurator = ({onChange}) => {
     };
 
     const updateConfig = (newConfig) => {
-        setConfig({...config, ...newConfig});
-        onChange({...config, ...newConfig});
+        setConfig({ ...config, ...newConfig });
+        onChange({ ...config, ...newConfig });
     };
 
     return (
@@ -93,9 +88,9 @@ const Configurator = ({onChange}) => {
                             }
                             value="large"
                             color="primary"
-                            onClick={() => updateConfig({size: "large"})}
+                            onClick={() => updateConfig({ size: "large" })}
                         >
-                            <FullscreenIcon /> Max
+                            <Fullscreen /> Max
                         </Button>
                         <Button
                             className="ButtonGradient"
@@ -104,44 +99,71 @@ const Configurator = ({onChange}) => {
                             }
                             value="small"
                             color="primary"
-                            onClick={() => updateConfig({size: "small"})}
+                            onClick={() => updateConfig({ size: "small" })}
                         >
-                            <FullscreenExitIcon /> Mini
+                            <FullscreenExit /> Mini
                         </Button>
                     </Paper>
                 </Grid>
                 <Grid item xs={12}>
                     <Paper className="Section">
                         <p className="Header">Background Gradient</p>
-                        <AutoSizer disableHeight>
-                            {({ width }) => (
-                                <ColumnSizer
-                                    columnMinWidth={50}
-                                    columnCount={columnCount}
-                                    width={width}
-                                >
-                                    {({
-                                        adjustedWidth,
-                                        getColumnWidth,
-                                        registerChild,
-                                    }) => (
-                                        <VirtualGrid
-                                            ref={registerChild}
-                                            cellRenderer={renderCell}
-                                            columnCount={columnCount}
-                                            columnWidth={getColumnWidth}
-                                            height={300}
-                                            rowCount={Math.floor(
-                                                gradients.length / columnCount
-                                            )}
-                                            rowHeight={50}
-                                            width={adjustedWidth}
-                                            style={{outline: 'none'}}
-                                        />
-                                    )}
-                                </ColumnSizer>
-                            )}
-                        </AutoSizer>
+                        {/*<AutoSizer disableHeight>*/}
+                        {/*    {({ width }) => (*/}
+                        {/*        <ColumnSizer*/}
+                        {/*            columnMinWidth={50}*/}
+                        {/*            columnCount={columnCount}*/}
+                        {/*            width={width}*/}
+                        {/*        >*/}
+                        {/*            {({*/}
+                        {/*                  adjustedWidth,*/}
+                        {/*                  getColumnWidth,*/}
+                        {/*                  registerChild*/}
+                        {/*              }) => (*/}
+                        {/*                <VirtualGrid*/}
+                        {/*                    ref={registerChild}*/}
+                        {/*                    cellRenderer={renderCell}*/}
+                        {/*                    columnCount={columnCount}*/}
+                        {/*                    columnWidth={getColumnWidth}*/}
+                        {/*                    height={300}*/}
+                        {/*                    rowCount={Math.floor(*/}
+                        {/*                        gradients.length / columnCount*/}
+                        {/*                    )}*/}
+                        {/*                    rowHeight={50}*/}
+                        {/*                    width={adjustedWidth}*/}
+                        {/*                    style={{ outline: "none" }}*/}
+                        {/*                />*/}
+                        {/*            )}*/}
+                        {/*        </ColumnSizer>*/}
+                        {/*    )}*/}
+                        {/*</AutoSizer>*/}
+                    </Paper>
+                </Grid>
+                <Grid item xs={12}>
+                    <Paper className="Section">
+                        <p className="Header">Theme</p>
+                        <Button
+                            className="ButtonGradient"
+                            variant={
+                                config.size === "large" ? "contained" : "outlined"
+                            }
+                            value="large"
+                            color="primary"
+                            onClick={() => updateConfig({ size: "large" })}
+                        >
+                            <LightMode /> Light
+                        </Button>
+                        <Button
+                            className="ButtonGradient"
+                            variant={
+                                config.size === "small" ? "contained" : "outlined"
+                            }
+                            value="small"
+                            color="primary"
+                            onClick={() => updateConfig({ size: "small" })}
+                        >
+                            <DarkMode /> Dark
+                        </Button>
                     </Paper>
                 </Grid>
             </Grid>
